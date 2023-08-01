@@ -200,5 +200,10 @@ async function handleIncomingMessage(message) {
     const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     client.initialize(browser);
 })();
+// Manejar eventos de mensajes
+client.on('message', handleIncomingMessage);
+
+// Inicializar el cliente de WhatsApp
+client.initialize();
 
 
