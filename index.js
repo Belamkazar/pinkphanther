@@ -199,13 +199,10 @@ async function handleIncomingMessage(message) {
 }
 
 // Función para inicializar el cliente y navegar a WhatsApp Web con opciones de espera
-async function initializeClient() {
-  const browser = await puppeteer.launch(puppeteerOptions);
-  await client.initialize(browser);
-  await client.page.goto('https://web.whatsapp.com/', {
-    waitUntil: 'domcontentloaded',
-  });
-}
+(async () => {
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+    client.initialize(browser);
+})();
 
 // Manejar eventos de mensajes
 client.on('message', handleIncomingMessage);
