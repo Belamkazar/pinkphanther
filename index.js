@@ -160,40 +160,7 @@ async function sendSequenceMessages(chatId, sequences) {
   const randomSequenceIndex = Math.floor(Math.random() * sequences.length);
   const randomSequence = sequences[randomSequenceIndex];
 
-  for (const [message, interval] of randomSequence) {
-    if (message.startsWith('enviar imagen')) {
-      // Es una solicitud para enviar una imagen o video
-      const imagePath = message.substring(14).trim();
-      if (fs.existsSync(imagePath)) {
-        const media = MessageMedia.fromFilePath(imagePath);
-        await client.sendMessage(chatId, media);
-      } else {
-        await client.sendMessage(chatId, 'No se encontró la imagen.');
-      }
-    } else {
-      await new Promise(resolve => setTimeout(resolve, interval));
-      await client.sendMessage(chatId, message);
-    }
-  }
-}
-
-// Función para manejar los mensajes entrantes
-async function handleIncomingMessage(message) {
-  console.log(message.body);
-  const matchedResponse = findSequence(message.body);
-  if (matchedResponse) {
-    if (matchedResponse.responses) {
-      const randomResponse = getRandomResponse(matchedResponse.responses);
-      await client.sendMessage(message.from, randomResponse);
-    } else if (matchedResponse.sequences) {
-      const sequences = matchedResponse.sequences;
-      await sendSequenceMessages(message.from, sequences);
-    }
-  } else {
-    const randomResponse = getRandomResponse(randomResponses);
-    await client.sendMessage(message.from, randomResponse);
-  }
-}
+ 
 
 // Función para inicializar el cliente y navegar a WhatsApp Web con opciones de espera
 (async () => {
