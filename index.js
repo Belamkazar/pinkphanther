@@ -201,10 +201,4 @@ async function handleIncomingMessage(message) {
     client.initialize(browser);
 })();
 
-// Manejar eventos de mensajes
-client.on('message', handleIncomingMessage);
 
-// Inicializar el cliente
-(async () => {
-  await initializeClient();
-})();
