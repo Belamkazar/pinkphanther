@@ -1,4 +1,4 @@
-const qrcode = require('qrcode-terminal');
+﻿const qrcode = require('qrcode-terminal');
 const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
 const puppeteer = require('puppeteer');
 const client = new Client({
@@ -9,12 +9,10 @@ const client = new Client({
 });
 const fs = require('fs');
 
-// Genera el código QR para conectarse a whatsapp-web
 client.on('qr', qr => {
   qrcode.generate(qr, { small: true });
 });
 
-// Si la conexión es exitosa muestra el mensaje de conexión exitosa
 client.on('ready', () => {
   console.log('Conexión exitosa nenes');
 });
@@ -27,67 +25,112 @@ const removeAccents = (str) => {
 // Palabras clave con respuestas aleatorias y secuencias de mensajes
 const keywordResponses = [
   {
-    keywords: ['hola', 'saludos', 'buenos dias', 'qué tal'],
-    responses: ['TODO ESTA BIEN'],
+    keywords: ["hola", "hl", "noches", "buenas", "saludos", "dias", "tarde", "mañana", "hla", "ola"],
+    responses: ['Hola amor', 'Hola papi', 'Hola como ests','Hola',],
   },
   {
-    keywords: ['adios', 'chao', 'nos vemos', 'hasta pronto'],
-    responses: ['¡Hasta luego!', '¡Adiós! Espero verte pronto.', '¡Nos vemos!'],
+    keywords: ["como", "estas", "como estas", "esta", "tal", "estás", "está"],
+    responses: ['Estoy, bien gracias', 'Bastante bien.', 'Muy bien Gracias', 'Bien, gracias.', 'Estoy de maravilla, amor❤️.'],
   },
   {
-    keywords: ['clima', 'tiempo'],
-    responses: ['Hoy está soleado y cálido.', 'El clima de hoy es frío y lluvioso.'],
+    keywords: ["donde", "parte", "vives", "ciudad", "lugar", "pais", "dnde", "dónde", "país", "sitio"],
+    responses: ['Soy Venezolana y estoy aquí en Bogota en la 127 con avenida villas en frente de bulevar niza amor'],
   },
   {
-    keywords: ['perro', 'primera secuencia'],
-    sequences: [
-      [
-        ['Mensaje 1 - Secuencia 1 (Opción 1)', 2000],
-        ['Mensaje 2 - Secuencia 1 (Opción 1)', 1000],
-        ['Mensaje 3 - Secuencia 1 (Opción 1)', 3000],
-        ['enviar imagen imagen1.jpg', 500],
-        ['Mensaje 4 - Secuencia 1 (Opción 1)', 2000],
-        ['enviar imagen Bang.gif', 1000],
-      ],
-      [
-        ['Mensaje 1 - Secuencia 1 (Opción 2)', 2000],
-        ['Mensaje 2 - Secuencia 1 (Opción 2)', 1000],
-        ['enviar imagen imagen2.jpg', 3000],
-        ['Mensaje 3 - Secuencia 1 (Opción 2)', 2000],
-      ],
+    keywords: ["soltera", "comprometida", "casada", "marido", "novio", "esposo", "pareja"],
+    responses: ['Soy mamá de 2 niñas, tengo varios años separada del papá de mis hijas y solo me he dedicado a ellas el 100 %'],
+  },
+  {
+    keywords: ["reina", "atractiva", "guapa", "belleza", "amor", "bb", "hermosa", "preciosa", "bella", "linda"],
+    responses: ['Gracias muy alagador', 'Enserio', 'Q bien amor', 'De verdad q eres super lindo',  'Tu eres tan lindo de verdad', 'tu me gustas mucho', 'Gracias amor gracias 💞', 'Gracias mí corazón', 'Y eso q no me conoces','Es usted muy amable.'],
+  },
+  {
+    keywords: ["edad", "años"],
+    responses: ['Tengo 47 años'],
+  },
+
+    {
+      keywords: ["mamar","cuca", "culo", "cojerte", "tetas" , "excita", "duro", "paro", "vagina", "grandemasturbarme", "chupartela", "chuparsela", "panocha", "mamarcela", "anal", "penetrarte", "comerte", "verga", "pechospene", "culito", "meterselo", "oral", "guevo", "chupar", "sexo", "venirme", "paja", "cenosmamar", "cuca", "culo", "cojerte", "tetas" , "excita", "duro", "paro", "vagina", "grandemasturbarme", "chupartela", "chuparsela", "panocha", "mamarcela", "anal", "penetrarte", "comerte", "verga", "pechospene", "culito","meterselo", "oral", "guevo", "chupar", "sexo", "venirme", "paja", "cenosmamar", "cuca", "culo", "cojerte", "tetas ", "excita", "duro", "paro", "vagina", "grandemasturbarme", "chupartela", "chuparsela", "panocha", "mamarcela", "anal", "penetrarte", "comerte", "verga", "pechospene", "culito", "meterselo", "oral", "guevo", "chupar", "sexo", "venirme", "paja","cenos"],
+      responses: ['Así me encanta el huevo rico 🤤 Ami me gusta mucho', 'Ay No Se Que Decir🤭','Q Rico Eso Me Encanta','Ay No Se Que Decir🤭','Super rico❤️❤️','divino papasito','Uf, qué rico. Me encantaría. 😋😋😋😋','Ayyy Q RiKo sii','Qué delicia 😘😘❤😍😍😍','Dime que me harías', 'Para lo q más importante son los sentimientos reales de esa persona'],
+    },
+
+{
+  keywords: ['rico', 'rica', 'provocativa', 'ricota', 'lechita', 'haces', 'desnuda', 'dedicas', 'que haces', 'deliciosa'],
+  sequences: [
+    [
+      ['Soy modelo webc@m de S€X0 en vivo por chat', 1000],
+      ['Si quieres verme, aquí te envió el Link', 3000],
+      ['no tienes que pagar nada amor', 500],
+      ['Te envire fotos y vídeos y cuando este en vivo amor', 2000],
+      ['enviar imagen rica1.jpg', 1000],
+      ['enviar imagen rica2.jpg', 1000],
+      ['enviar imagen rica3.jpg', 1000],
+      ['https://nahomicam.belamkazar.com/', 500],
+      ['https://nahomicam.belamkazar.com/', 500],
+      ['https://nahomicam.belamkazar.com/', 500],
     ],
-  },
-  {
-    keywords: ['gato', 'segunda secuencia'],
-    sequences: [
-      [
-        ['Mensaje 1 - Secuencia 2 (Opción 1)', 2000],
-        ['enviar imagen imagen3.jpg', 500],
-        ['Mensaje 2 - Secuencia 2 (Opción 1)', 1000],
-        ['enviar imagen imagen4.jpg', 3000],
-      ],
-      [
-        ['Mensaje 1 - Secuencia 2 (Opción 2)', 2000],
-        ['enviar imagen imagen5.jpg', 1000],
-        ['Mensaje 2 - Secuencia 2 (Opción 2)', 3000],
-        ['enviar imagen imagen6.jpg', 500],
-        ['Mensaje 3 - Secuencia 2 (Opción 2)', 2000],
-      ],
+    [
+      ['Soy modelo webc@m de S€X0 en vivo por chat, Te enviaré el enlace y no tienes que pagar nada, te enviare fotos y videos, podras verme cuando este en vivo Amor❤️🔥.', 2000],
+      ['enviar imagen rica1.jpg', 1000],
+      ['enviar imagen rica2.jpg', 1000],
+      ['enviar imagen rica3.jpg', 1000],
+      ['https://nahomicam.belamkazar.com/', 500],
+      ['https://nahomicam.belamkazar.com/', 500],
+      ['https://nahomicam.belamkazar.com/', 500],
     ],
-  },
-  // Agregar más palabras clave y sus respuestas/secuencias asociadas aquí
+  ],
+},
+{
+  keywords: ['entra', 'sale', 'entro', 'paguina', 'abre', 'hago', 'link', 'bloquada', 'funciona', 'abrir'],
+  sequences: [
+    [
+      ['Quiero q lo intentes de nuevo para que me veas todas las noches Amor', 2000],
+      ['enviar imagen entra1.jpg', 500],
+      ['enviar imagen entra2.jpg', 500],
+      ['enviar imagen entra3.jpg', 500],
+      ['https://nahomicam.belamkazar.com/', 1000],
+      ['https://nahomicam.belamkazar.com/', 1000],
+    ],
+    [
+      ['Intentalo de nuevo y disfrutamos todas las noches Amor🔥.', 2000],
+      ['enviar imagen entra1.jpg', 500],
+      ['enviar imagen entra4.jpg', 500],
+      ['enviar imagen entra5.jpg', 500],
+      ['https://nahomicam.belamkazar.com/', 1000],
+      ['https://nahomicam.belamkazar.com/', 1000],
+    ],
+  ],
+},
+// Agregar más palabras clave y sus respuestas/secuencias asociadas aquí
+{
+  keywords: ['foto', 'video', 'videos', 'mandame', 'enviame', 'hago', 'llamada', 'audio'],
+  sequences: [
+    [
+      ['Sii Amor', 500],
+      ['enviar imagen amor1.jpg', 500],
+      ['enviar imagen amor2.jpg', 500],
+      ['enviar imagen amor3.jpg', 500],
+    ],
+    [
+      ['Bien Amor🔥.', 2000],
+      ['enviar imagen amor2.jpg', 500],
+      ['enviar imagen amor4.jpg', 500],
+      ['enviar imagen amor5.jpg', 500],
+    ],
+  ],
+},
 ];
 
 // Diccionario de secuencias y sus imágenes asociadas
 const sequences = {
-  // Agregar más secuencias aquí si es necesario
-  // secuencia3: [ ... ]
+// Agregar más secuencias aquí si es necesario
+// secuencia3: [ ... ]
 };
 
 // Respuestas aleatorias para mensajes desconocidos
 const randomResponses = [
-  'Lo siento, no he reconocido tu mensaje.',
-  'No estoy seguro de cómo responder a eso.',
+'Lo siento, no he reconocido tu mensaje.',
+'No estoy seguro de cómo responder a eso.',
 ];
 
 // Función para obtener una respuesta aleatoria de una lista
@@ -98,10 +141,13 @@ function getRandomResponse(responsesList) {
 
 // Función para verificar si el mensaje incluye alguna de las palabras clave asociadas con una secuencia
 function findSequence(message) {
-  const lowercaseMessage = message.toLowerCase();
+  const lowercaseMessage = removeAccents(message.toLowerCase()); // Eliminamos los acentos del mensaje
   for (const response of keywordResponses) {
     const keywords = response.keywords;
-    const found = keywords.some(keyword => lowercaseMessage.includes(keyword));
+    const found = keywords.some(keyword => {
+      const lowercaseKeyword = removeAccents(keyword.toLowerCase()); // Eliminamos los acentos de la palabra clave
+      return lowercaseMessage.includes(lowercaseKeyword);
+    });
     if (found) {
       return response;
     }
@@ -149,9 +195,11 @@ async function handleIncomingMessage(message) {
   }
 }
 
+
 // Manejar eventos de mensajes
 client.on('message', handleIncomingMessage);
 
+// Función para inicializar el cliente y navegar a WhatsApp Web con opciones de espera
 (async () => {
     const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     client.initialize(browser);
