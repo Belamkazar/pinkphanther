@@ -1,4 +1,5 @@
-﻿const qrcode = require('qrcode-terminal');
+
+const qrcode = require('qrcode-terminal');
 const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
 const puppeteer = require('puppeteer');
 const client = new Client({
@@ -21,6 +22,7 @@ client.on('ready', () => {
 const removeAccents = (str) => {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 };
+
 
 // Palabras clave con respuestas aleatorias y secuencias de mensajes
 const keywordResponses = [
