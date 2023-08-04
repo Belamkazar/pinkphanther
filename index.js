@@ -24,8 +24,8 @@ const removeAccents = (str) => {
 
 // Palabras clave con respuestas aleatorias y secuencias de mensajes
 const keywordResponses = [
-  {
-    keywords: ['hola', 'saludos', 'buenos dias', 'qué tal'],
+    {
+     keywords: ['hola', 'saludos', 'buenos dias', 'qué tal'],
     responses: ['TODO ESTA BIEN'],
   },
   {
@@ -81,23 +81,41 @@ const sequences = {
   // Agregar más secuencias aquí si es necesario
   // secuencia3: [ ... ]
 };
-
 // Respuestas aleatorias para mensajes desconocidos
 const randomResponses = [
   'Lo siento, no he reconocido tu mensaje.',
   'No estoy seguro de cómo responder a eso.',
 ];
 
-// Función para obtener una respuesta aleatoria de una lista con una demora
-function getRandomResponseWithDelay(responsesList) {
-  return new Promise((resolve) => {
-    const randomIndex = Math.floor(Math.random() * responsesList.length);
-    const randomResponse = responsesList[randomIndex];
-    const delay = Math.floor(Math.random() * 4000) + 1000; // Tiempo de espera entre 1 y 5 segundos
-    setTimeout(() => {
-      resolve(randomResponse);
-    }, delay);
-  });
+// Función para obtener una respuesta aleatoria de una lista
+function getRandomResponse(responsesList) {
+  const randomIndex = Math.floor(Math.random() * responsesList.length);
+  return responsesList[randomIndex];
+}
+
+// Función para manejar los mensajes entrantes
+async function handleIncomingMessage(message) {
+  console.log(message.body);
+  const matchedResponse = findSequence(message.body);
+  if (matchedResponse) {
+    if (matchedResponse.responses) {
+      const randomResponse = getRandomResponse(matchedResponse.responses);
+      await sendDelayedMessage(message.from, randomResponse);
+    } else if (matchedResponse.sequences) {
+      const sequences = matchedResponse.sequences;
+      await sendSequenceMessages(message.from, sequences);
+    }
+  } else {
+    const randomResponse = getRandomResponse(randomResponses);
+    await sendDelayedMessage(message.from, randomResponse);
+  }
+}
+
+// Función para enviar un mensaje con una demora aleatoria antes de enviarlo
+async function sendDelayedMessage(chatId, message) {
+  const delay = Math.floor(Math.random() * 10000) + 4000; // Delay entre 1 y 5 segundos
+  await new Promise(resolve => setTimeout(resolve, delay));
+  await client.sendMessage(chatId, message);
 }
 
 // Función para verificar si el mensaje incluye alguna de las palabras clave asociadas con una secuencia
@@ -151,7 +169,7 @@ async function handleIncomingMessage(message) {
       await sendSequenceMessages(message.from, sequences);
     }
   } else {
-    const randomResponse = await getRandomResponseWithDelay(randomResponses);
+    const randomResponse = getRandomResponse(randomResponses);
     await client.sendMessage(message.from, randomResponse);
   }
 }
@@ -162,5 +180,5 @@ client.on('message', handleIncomingMessage);
 // Función para inicializar el cliente y navegar a WhatsApp Web con opciones de espera
 (async () => {
   const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
-  await client.initialize(browser); // Esperar a que el cliente se inicialice correctamente
+  client.initialize(browser);
 })();
