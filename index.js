@@ -28,7 +28,7 @@ const keywordResponses = [
   {
     keywords: ['hola', 'saludos', 'buenos dias', 'qué tal'],
     responses: ['TODO ESTA BIEN'],
-    },
+  },
   {
     keywords: ['adios', 'chao', 'nos vemos', 'hasta pronto'],
     responses: ['¡Hasta luego!', '¡Adiós! Espero verte pronto.', '¡Nos vemos!'],
@@ -38,62 +38,31 @@ const keywordResponses = [
     responses: ['Hoy está soleado y cálido.', 'El clima de hoy es frío y lluvioso.'],
   },
   {
-    keywords: ['mari', 'mor'],
-    sequences: [
-      [ ['hola', 5000],], [ ['bella', 10000], ], ], },
-  {
-    keywords: ['willa', 'mora'],
-    sequences: [
-      [
-        ['hola', 6000],
-      ],
-      [
-        ['bella', 8000],
-      ],
-    ],
-  },
-  {
-    keywords: ['tola', 'zor'],
-    sequences: [
-      [
-        ['gana', 4000],
-      ],
-      [
-        ['una', 4000],
-      ],
-    ],
-  },
-  {
     keywords: ['perro', 'primera secuencia'],
     sequences: [
       [
-        ['Mensaje 1 - Secuencia 1 (Opción 1)', 1000],
-        ['Mensaje 2 - Secuencia 1 (Opción 1)', 2000],
-        ['Mensaje 3 - Secuencia 1 (Opción 1)', 3000],
-        ['enviar imagen imagen1.jpg', 500],
-        ['Mensaje 4 - Secuencia 1 (Opción 1)', 4000],
-        ['enviar imagen Bang.gif', 5000],
+        ['Mensaje 1 - Secuencia 1 (Opción 1)', 2000],
       ],
       [
-        ['Mensaje 1 - Secuencia 1 (Opción 2)', 6000],
-        ['Mensaje 2 - Secuencia 1 (Opción 2)', 7000],
-        ['enviar imagen imagen2.jpg', 3000],
-        ['Mensaje 3 - Secuencia 1 (Opción 2)', 8000],
+        ['Mensaje 1 - Secuencia 1 (Opción 2)', 2000],
       ],
     ],
   },
   {
-    keywords: ['pillo', 'ssii'],
+    keywords: ['gato', 'segunda secuencia'],
     sequences: [
       [
-        ['Mensaje 1 - Secuencia 2 (Opción 1)', 10000],
+        ['Mensaje 1 - Secuencia 2 (Opción 1)', 2000],
+        ['enviar imagen imagen3.jpg', 500],
+        ['Mensaje 2 - Secuencia 2 (Opción 1)', 1000],
+        ['enviar imagen imagen4.jpg', 3000],
       ],
       [
-        ['Mensaje 1 - Secuencia 2 (Opción 2)', 20000],
+        ['Mensaje 1 - Secuencia 2 (Opción 2)', 2000],
         ['enviar imagen imagen5.jpg', 1000],
-        ['Mensaje 2 - Secuencia 2 (Opción 2)', 30000],
+        ['Mensaje 2 - Secuencia 2 (Opción 2)', 3000],
         ['enviar imagen imagen6.jpg', 500],
-        ['Mensaje 3 - Secuencia 2 (Opción 2)', 40000],
+        ['Mensaje 3 - Secuencia 2 (Opción 2)', 2000],
       ],
     ],
   },
@@ -106,11 +75,17 @@ const sequences = {
   // secuencia3: [ ... ]
 };
 
-// Respuestas aleatorias para mensajes desconocidos
-const randomResponses = [
-  'Lo siento, no he reconocido tu mensaje.',
-  'No estoy seguro de cómo responder a eso.',
-];
+// Diccionario de secuencias y sus imágenes asociadas
+const sequences = {
+  sequence3: [
+    [
+      ['bien hermano', 8000],
+    ],
+    [
+      ['bientos', 6000],
+    ],
+  ],
+},
 
 // Función para obtener una respuesta aleatoria de una lista
 function getRandomResponse(responsesList) {
@@ -155,7 +130,6 @@ async function sendSequenceMessages(chatId, sequences) {
     }
   }
 }
-
 // Función para manejar los mensajes entrantes
 async function handleIncomingMessage(message) {
   console.log(message.body);
@@ -169,8 +143,8 @@ async function handleIncomingMessage(message) {
       await sendSequenceMessages(message.from, sequences);
     }
   } else {
-    const randomResponse = getRandomResponse(randomResponses);
-    await client.sendMessage(message.from, randomResponse);
+    // Respuesta para mensajes desconocidos utilizando la secuencia 3
+    await sendSequenceMessages(message.from, sequences.sequence3);
   }
 }
 
