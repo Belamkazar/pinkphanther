@@ -22,10 +22,11 @@ const removeAccents = (str) => {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 };
 
+
 // Palabras clave con respuestas aleatorias y secuencias de mensajes
 const keywordResponses = [
-    {
-     keywords: ['hola', 'saludos', 'buenos dias', 'qué tal'],
+  {
+    keywords: ['hola', 'saludos', 'buenos dias', 'qué tal'],
     responses: ['TODO ESTA BIEN'],
   },
   {
@@ -59,16 +60,16 @@ const keywordResponses = [
     keywords: ['gato', 'segunda secuencia'],
     sequences: [
       [
-        ['Mensaje 1 - Secuencia 2 (Opción 1)', 10000],
+        ['Mensaje 1 - Secuencia 2 (Opción 1)', 2000],
         ['enviar imagen imagen3.jpg', 500],
-        ['Mensaje 2 - Secuencia 2 (Opción 1)', 10000],
-        ['enviar imagen amor2.jpg', 30000],
+        ['Mensaje 2 - Secuencia 2 (Opción 1)', 1000],
+        ['enviar imagen imagen4.jpg', 3000],
       ],
       [
         ['Mensaje 1 - Secuencia 2 (Opción 2)', 2000],
         ['enviar imagen imagen5.jpg', 1000],
         ['Mensaje 2 - Secuencia 2 (Opción 2)', 3000],
-        ['enviar imagen amor1.jpg', 500],
+        ['enviar imagen imagen6.jpg', 500],
         ['Mensaje 3 - Secuencia 2 (Opción 2)', 2000],
       ],
     ],
@@ -81,6 +82,7 @@ const sequences = {
   // Agregar más secuencias aquí si es necesario
   // secuencia3: [ ... ]
 };
+
 // Respuestas aleatorias para mensajes desconocidos
 const randomResponses = [
   'Lo siento, no he reconocido tu mensaje.',
@@ -91,31 +93,6 @@ const randomResponses = [
 function getRandomResponse(responsesList) {
   const randomIndex = Math.floor(Math.random() * responsesList.length);
   return responsesList[randomIndex];
-}
-
-// Función para manejar los mensajes entrantes
-async function handleIncomingMessage(message) {
-  console.log(message.body);
-  const matchedResponse = findSequence(message.body);
-  if (matchedResponse) {
-    if (matchedResponse.responses) {
-      const randomResponse = getRandomResponse(matchedResponse.responses);
-      await sendDelayedMessage(message.from, randomResponse);
-    } else if (matchedResponse.sequences) {
-      const sequences = matchedResponse.sequences;
-      await sendSequenceMessages(message.from, sequences);
-    }
-  } else {
-    const randomResponse = getRandomResponse(randomResponses);
-    await sendDelayedMessage(message.from, randomResponse);
-  }
-}
-
-// Función para enviar un mensaje con una demora aleatoria antes de enviarlo
-async function sendDelayedMessage(chatId, message) {
-  const delay = Math.floor(Math.random() * 20000) + 10000; // Delay entre 1 y 5 segundos
-  await new Promise(resolve => setTimeout(resolve, delay));
-  await client.sendMessage(chatId, message);
 }
 
 // Función para verificar si el mensaje incluye alguna de las palabras clave asociadas con una secuencia
@@ -156,29 +133,37 @@ async function sendSequenceMessages(chatId, sequences) {
   }
 }
 
-// Función para manejar los mensajes entrantes
 async function handleIncomingMessage(message) {
   console.log(message.body);
   const matchedResponse = findSequence(message.body);
   if (matchedResponse) {
     if (matchedResponse.responses) {
       const randomResponse = getRandomResponse(matchedResponse.responses);
-      await client.sendMessage(message.from, randomResponse);
+      await sendDelayedMessage(message.from, randomResponse);
     } else if (matchedResponse.sequences) {
       const sequences = matchedResponse.sequences;
       await sendSequenceMessages(message.from, sequences);
     }
   } else {
     const randomResponse = getRandomResponse(randomResponses);
-    await client.sendMessage(message.from, randomResponse);
+    await sendDelayedMessage(message.from, randomResponse);
   }
 }
+
+// Función para enviar un mensaje con una demora aleatoria antes de enviarlo
+async function sendDelayedMessage(chatId, message) {
+  const delay = Math.floor(Math.random() * 15000) + 10000; // Delay entre 1 y 5 segundos
+  await new Promise(resolve => setTimeout(resolve, delay));
+  await client.sendMessage(chatId, message);
+}
+
+
 
 // Manejar eventos de mensajes
 client.on('message', handleIncomingMessage);
 
 // Función para inicializar el cliente y navegar a WhatsApp Web con opciones de espera
 (async () => {
-  const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
-  client.initialize(browser);
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+    client.initialize(browser);
 })();
