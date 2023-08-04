@@ -93,7 +93,7 @@ function getRandomResponseWithDelay(responsesList) {
   return new Promise((resolve) => {
     const randomIndex = Math.floor(Math.random() * responsesList.length);
     const randomResponse = responsesList[randomIndex];
-    const delay = Math.floor(Math.random() * 10000) + 4000; // Tiempo de espera entre 1 y 5 segundos
+    const delay = Math.floor(Math.random() * 4000) + 1000; // Tiempo de espera entre 1 y 5 segundos
     setTimeout(() => {
       resolve(randomResponse);
     }, delay);
