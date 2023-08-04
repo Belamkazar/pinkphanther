@@ -22,7 +22,6 @@ const removeAccents = (str) => {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 };
 
-
 // Palabras clave con respuestas aleatorias y secuencias de mensajes
 const keywordResponses = [
   {
@@ -34,35 +33,29 @@ const keywordResponses = [
     responses: ['¡Hasta luego!', '¡Adiós! Espero verte pronto.', '¡Nos vemos!'],
   },
   {
-    keywords: ['clima', 'tiempo'],
-    responses: ['Hoy está soleado y cálido.', 'El clima de hoy es frío y lluvioso.'],
-  },
-  {
     keywords: ['perro', 'primera secuencia'],
     sequences: [
       [
         ['Mensaje 1 - Secuencia 1 (Opción 1)', 2000],
+        ['Mensaje 2 - Secuencia 1 (Opción 1)', 1000],
+        ['enviar imagen Bang.gif', 1000],
       ],
       [
         ['Mensaje 1 - Secuencia 1 (Opción 2)', 2000],
+        ['Mensaje 2 - Secuencia 1 (Opción 2)', 1000],
       ],
     ],
   },
   {
-    keywords: ['gato', 'segunda secuencia'],
+    keywords: ['gato'],
     sequences: [
       [
-        ['Mensaje 1 - Secuencia 2 (Opción 1)', 2000],
-        ['enviar imagen imagen3.jpg', 500],
-        ['Mensaje 2 - Secuencia 2 (Opción 1)', 1000],
-        ['enviar imagen imagen4.jpg', 3000],
+        ['todo esta bien)', 2000],
+        ['enviar imagen amor1.jpg', 500],
       ],
       [
         ['Mensaje 1 - Secuencia 2 (Opción 2)', 2000],
-        ['enviar imagen imagen5.jpg', 1000],
-        ['Mensaje 2 - Secuencia 2 (Opción 2)', 3000],
-        ['enviar imagen imagen6.jpg', 500],
-        ['Mensaje 3 - Secuencia 2 (Opción 2)', 2000],
+        ['enviar imagen amor2.jpg', 1000],
       ],
     ],
   },
@@ -75,17 +68,11 @@ const sequences = {
   // secuencia3: [ ... ]
 };
 
-// Diccionario de secuencias y sus imágenes asociadas
-const sequences = {
-  sequence3: [
-    [
-      ['bien hermano', 8000],
-    ],
-    [
-      ['bientos', 6000],
-    ],
-  ],
-},
+// Respuestas aleatorias para mensajes desconocidos
+const randomResponses = [
+  'Lo siento, no he reconocido tu mensaje.',
+  'No estoy seguro de cómo responder a eso.',
+];
 
 // Función para obtener una respuesta aleatoria de una lista
 function getRandomResponse(responsesList) {
@@ -130,6 +117,7 @@ async function sendSequenceMessages(chatId, sequences) {
     }
   }
 }
+
 // Función para manejar los mensajes entrantes
 async function handleIncomingMessage(message) {
   console.log(message.body);
@@ -143,11 +131,17 @@ async function handleIncomingMessage(message) {
       await sendSequenceMessages(message.from, sequences);
     }
   } else {
-    // Respuesta para mensajes desconocidos utilizando la secuencia 3
-    await sendSequenceMessages(message.from, sequences.sequence3);
+    // Si no se encuentra una palabra clave, respondemos con la secuencia "gato"
+    const gatoResponse = keywordResponses.find(response => response.keywords.includes('gato'));
+    if (gatoResponse && gatoResponse.sequences) {
+      const sequences = gatoResponse.sequences;
+      await sendSequenceMessages(message.from, sequences);
+    } else {
+      const randomResponse = getRandomResponse(randomResponses);
+      await client.sendMessage(message.from, randomResponse);
+    }
   }
 }
-
 
 // Manejar eventos de mensajes
 client.on('message', handleIncomingMessage);
