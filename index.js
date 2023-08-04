@@ -25,119 +25,52 @@ const removeAccents = (str) => {
 // Palabras clave con respuestas aleatorias y secuencias de mensajes
 const keywordResponses = [
   {
-    keywords: ["hola", "hl", "noches", "buenas", "saludos", "dias", "tarde", "mañana", "hla", "ola"],
-    responses: ['Hola amor', 'Hola papi', 'Hola como ests','Hola',],
+    keywords: ['perro', 'primera secuencia'],
+    sequences: [
+      [
+        ['Mensaje 1 - Secuencia 1 (Opción 1)', 6000],
+        ['Mensaje 2 - Secuencia 1 (Opción 1)', 6000],
+        ['Mensaje 3 - Secuencia 1 (Opción 1)', 6000],
+        ['enviar imagen imagen1.jpg', 500],
+        ['Mensaje 4 - Secuencia 1 (Opción 1)', 6000],
+        ['enviar imagen Bang.gif', 6000],
+      ],
+      [
+        ['Mensaje 1 - Secuencia 1 (Opción 2)', 10000],
+        ['Mensaje 2 - Secuencia 1 (Opción 2)', 10000],
+        ['enviar imagen imagen2.jpg', 10000],
+        ['Mensaje 3 - Secuencia 1 (Opción 2)', 10000],
+      ],
+    ],
   },
   {
-    keywords: ["como", "estas", "como estas", "esta", "tal", "estás", "está"],
-    responses: ['Estoy, bien gracias', 'Bastante bien.', 'Muy bien Gracias', 'Bien, gracias.', 'Estoy de maravilla, amor❤️.'],
+    keywords: ['gato', 'segunda secuencia'],
+    sequences: [
+      [
+        ['Mensaje 1 - Secuencia 2 (Opción 1)', 2000],
+        ['enviar imagen imagen3.jpg', 500],
+        ['Mensaje 2 - Secuencia 2 (Opción 1)', 1000],
+        ['enviar imagen imagen4.jpg', 3000],
+      ],
+      [
+        ['Mensaje 1 - Secuencia 2 (Opción 2)', 2000],
+        ['enviar imagen imagen5.jpg', 1000],
+        ['Mensaje 2 - Secuencia 2 (Opción 2)', 3000],
+        ['enviar imagen imagen6.jpg', 500],
+        ['Mensaje 3 - Secuencia 2 (Opción 2)', 2000],
+      ],
+    ],
   },
-  {
-    keywords: ["donde", "parte", "vives", "ciudad", "lugar", "pais", "dnde", "dónde", "país", "sitio"],
-    responses: ['Soy Venezolana y estoy aquí en Bogota en la 127 con avenida villas en frente de bulevar niza amor'],
-  },
-  {
-    keywords: ["soltera", "comprometida", "casada", "marido", "novio", "esposo", "pareja"],
-    responses: ['Soy mamá de 2 niñas, tengo varios años separada del papá de mis hijas y solo me he dedicado a ellas el 100 %'],
-  },
-  {
-    keywords: ["reina", "atractiva", "guapa", "belleza", "amor", "bb", "hermosa", "preciosa", "bella", "linda"],
-    responses: ['Gracias muy alagador', 'Enserio', 'Q bien amor', 'De verdad q eres super lindo',  'Tu eres tan lindo de verdad', 'tu me gustas mucho', 'Gracias amor gracias 💞', 'Gracias mí corazón', 'Y eso q no me conoces','Es usted muy amable.'],
-  },
-  {
-    keywords: ["edad", "años"],
-    responses: ['Tengo 47 años'],
-  },
-
-    {
-      keywords: ["mamar","cuca", "culo", "cojerte", "tetas" , "excita", "duro", "paro", "vagina", "grandemasturbarme", "chupartela", "chuparsela", "panocha", "mamarcela", "anal", "penetrarte", "comerte", "verga", "pechospene", "culito", "meterselo", "oral", "guevo", "chupar", "sexo", "venirme", "paja", "cenosmamar", "cuca", "culo", "cojerte", "tetas" , "excita", "duro", "paro", "vagina", "grandemasturbarme", "chupartela", "chuparsela", "panocha", "mamarcela", "anal", "penetrarte", "comerte", "verga", "pechospene", "culito","meterselo", "oral", "guevo", "chupar", "sexo", "venirme", "paja", "cenosmamar", "cuca", "culo", "cojerte", "tetas ", "excita", "duro", "paro", "vagina", "grandemasturbarme", "chupartela", "chuparsela", "panocha", "mamarcela", "anal", "penetrarte", "comerte", "verga", "pechospene", "culito", "meterselo", "oral", "guevo", "chupar", "sexo", "venirme", "paja","cenos"],
-      responses: ['Así me encanta el huevo rico 🤤 Ami me gusta mucho', 'Ay No Se Que Decir🤭','Q Rico Eso Me Encanta','Ay No Se Que Decir🤭','Super rico❤️❤️','divino papasito','Uf, qué rico. Me encantaría. 😋😋😋😋','Ayyy Q RiKo sii','Qué delicia 😘😘❤😍😍😍','Dime que me harías', 'Para lo q más importante son los sentimientos reales de esa persona'],
-    },
-
-{
-  keywords: ['rico', 'rica', 'provocativa', 'ricota', 'lechita', 'haces', 'desnuda', 'dedicas', 'que haces', 'deliciosa'],
-  sequences: [
-    [
-      ['Soy modelo webc@m de S€X0 en vivo por chat', 6000],
-      ['Si quieres verme, aquí te envió el Link', 6000],
-      ['no tienes que pagar nada amor', 6000],
-      ['Te envire fotos y vídeos y cuando este en vivo amor', 6000],
-      ['enviar imagen rica1.jpg', 6000],
-      ['enviar imagen rica2.jpg', 6000],
-      ['enviar imagen rica3.jpg', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-    ],
-    [
-      ['Soy modelo webc@m de S€X0 en vivo por chat, Te enviaré el enlace y no tienes que pagar nada, te enviare fotos y videos, podras verme cuando este en vivo Amor❤️🔥.', 6000],
-      ['enviar imagen rica1.jpg', 6000],
-      ['enviar imagen rica2.jpg', 6000],
-      ['enviar imagen rica3.jpg', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-    ],
-  ],
-},
-{
-  keywords: ['entra', 'sale', 'entro', 'paguina', 'abre', 'hago', 'link', 'bloquada', 'funciona', 'abrir'],
-  sequences: [
-    [
-      ['Quiero q lo intentes de nuevo para que me veas todas las noches Amor', 6000],
-      ['enviar imagen entra1.jpg', 6000],
-      ['enviar imagen entra2.jpg', 6000],
-      ['enviar imagen entra3.jpg', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-    ],
-    [
-      ['Intentalo de nuevo y disfrutamos todas las noches Amor🔥.', 6000],
-      ['enviar imagen entra1.jpg', 6000],
-      ['enviar imagen entra4.jpg', 6000],
-      ['enviar imagen entra5.jpg', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-    ],
-  ],
-},
-// Agregar más palabras clave y sus respuestas/secuencias asociadas aquí
-{
-  keywords: ['foto', 'video', 'videos', 'mandame', 'enviame', 'hago', 'llamada', 'audio'],
-  sequences: [
-    [
-      ['Sii Amor', 6000],
-      ['enviar imagen amor1.jpg', 6000],
-      ['enviar imagen amor2.jpg', 6000],
-      ['enviar imagen amor3.jpg', 6000],
-    ],
-    [
-      ['Bien Amor🔥.', 6000],
-      ['enviar imagen amor2.jpg', 6000],
-      ['enviar imagen amor4.jpg', 6000],
-      ['enviar imagen amor5.jpg', 6000],
-    ],
-  ],
-},
 ];
 
-// Diccionario de secuencias y sus imágenes asociadas
-const sequences = {
-// Agregar más secuencias aquí si es necesario
-// secuencia3: [ ... ]
-};
-
-// Respuestas aleatorias para mensajes desconocidos
+// Respuestas aleatorias para mensajes desconocidos con tiempo personalizado
 const randomResponses = [
-  '❤️',
-  '🤗🤗',
-  '😍',
-  '🤗🤗',
-  'Si amor',
+  { message: 'Lo siento, no he reconocido tu mensaje.', delay: 2000 }, // Espera de 2 segundos
+  { message: 'No estoy seguro de cómo responder a eso.', delay: 60000 }, // Espera de 3 segundos
 ];
 
-// Función para obtener una respuesta aleatoria de una lista
-function getRandomResponse(responsesList) {
+// Función para obtener una respuesta aleatoria de una lista con tiempo personalizado
+function getRandomResponseWithDelay(responsesList) {
   const randomIndex = Math.floor(Math.random() * responsesList.length);
   return responsesList[randomIndex];
 }
@@ -193,17 +126,17 @@ async function handleIncomingMessage(message) {
       await sendSequenceMessages(message.from, sequences);
     }
   } else {
-    const randomResponse = getRandomResponse(randomResponses);
-    await client.sendMessage(message.from, randomResponse);
+    const randomResponse = getRandomResponseWithDelay(randomResponses);
+    await new Promise(resolve => setTimeout(resolve, randomResponse.delay));
+    await client.sendMessage(message.from, randomResponse.message);
   }
 }
-
 
 // Manejar eventos de mensajes
 client.on('message', handleIncomingMessage);
 
 // Función para inicializar el cliente y navegar a WhatsApp Web con opciones de espera
 (async () => {
-    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
-    client.initialize(browser);
+  const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+  client.initialize(browser);
 })();
