@@ -93,7 +93,7 @@ function getRandomResponseWithDelay(responsesList) {
   return new Promise((resolve) => {
     const randomIndex = Math.floor(Math.random() * responsesList.length);
     const randomResponse = responsesList[randomIndex];
-    const delay = Math.floor(Math.random() * 10000) + 5000; // Tiempo de espera entre 1 y 5 segundos
+    const delay = Math.floor(Math.random() * 10000) + 4000; // Tiempo de espera entre 1 y 5 segundos
     setTimeout(() => {
       resolve(randomResponse);
     }, delay);
@@ -162,5 +162,5 @@ client.on('message', handleIncomingMessage);
 // Función para inicializar el cliente y navegar a WhatsApp Web con opciones de espera
 (async () => {
   const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
-  client.initialize(browser);
+  await client.initialize(browser); // Esperar a que el cliente se inicialice correctamente
 })();
