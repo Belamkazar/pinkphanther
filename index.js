@@ -47,26 +47,20 @@ const keywordResponses = [
     ],
   },
   {
-    keywords: ['gato'],
+    keywords: ['gato'], // Palabra clave "gato"
     sequences: [
       [
-        ['todo esta bien)', 2000],
-        ['enviar imagen amor1.jpg', 500],
+        ['Mensaje 1 - Secuencia 2 (Opción 1)', 2000],
+        ['enviar imagen imagen3.jpg', 500],
       ],
       [
         ['Mensaje 1 - Secuencia 2 (Opción 2)', 2000],
-        ['enviar imagen amor2.jpg', 1000],
+        ['enviar imagen imagen5.jpg', 1000],
       ],
     ],
   },
   // Agregar más palabras clave y sus respuestas/secuencias asociadas aquí
 ];
-
-// Diccionario de secuencias y sus imágenes asociadas
-const sequences = {
-  // Agregar más secuencias aquí si es necesario
-  // secuencia3: [ ... ]
-};
 
 // Respuestas aleatorias para mensajes desconocidos
 const randomResponses = [
@@ -148,6 +142,6 @@ client.on('message', handleIncomingMessage);
 
 // Función para inicializar el cliente y navegar a WhatsApp Web con opciones de espera
 (async () => {
-    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
-    client.initialize(browser);
+  const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+  client.initialize(browser);
 })();
