@@ -22,6 +22,7 @@ const removeAccents = (str) => {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 };
 
+
 // Palabras clave con respuestas aleatorias y secuencias de mensajes
 const keywordResponses = [
   {
@@ -33,34 +34,54 @@ const keywordResponses = [
     responses: ['¡Hasta luego!', '¡Adiós! Espero verte pronto.', '¡Nos vemos!'],
   },
   {
+    keywords: ['clima', 'tiempo'],
+    responses: ['Hoy está soleado y cálido.', 'El clima de hoy es frío y lluvioso.'],
+  },
+  {
     keywords: ['perro', 'primera secuencia'],
     sequences: [
       [
         ['Mensaje 1 - Secuencia 1 (Opción 1)', 2000],
         ['Mensaje 2 - Secuencia 1 (Opción 1)', 1000],
+        ['Mensaje 3 - Secuencia 1 (Opción 1)', 3000],
+        ['enviar imagen imagen1.jpg', 500],
+        ['Mensaje 4 - Secuencia 1 (Opción 1)', 2000],
         ['enviar imagen Bang.gif', 1000],
       ],
       [
         ['Mensaje 1 - Secuencia 1 (Opción 2)', 2000],
         ['Mensaje 2 - Secuencia 1 (Opción 2)', 1000],
+        ['enviar imagen imagen2.jpg', 3000],
+        ['Mensaje 3 - Secuencia 1 (Opción 2)', 2000],
       ],
     ],
   },
   {
-    keywords: ['gato'], // Palabra clave "gato"
+    keywords: ['gato', 'segunda secuencia'],
     sequences: [
       [
         ['Mensaje 1 - Secuencia 2 (Opción 1)', 2000],
         ['enviar imagen imagen3.jpg', 500],
+        ['Mensaje 2 - Secuencia 2 (Opción 1)', 1000],
+        ['enviar imagen imagen4.jpg', 3000],
       ],
       [
         ['Mensaje 1 - Secuencia 2 (Opción 2)', 2000],
         ['enviar imagen imagen5.jpg', 1000],
+        ['Mensaje 2 - Secuencia 2 (Opción 2)', 3000],
+        ['enviar imagen imagen6.jpg', 500],
+        ['Mensaje 3 - Secuencia 2 (Opción 2)', 2000],
       ],
     ],
   },
   // Agregar más palabras clave y sus respuestas/secuencias asociadas aquí
 ];
+
+// Diccionario de secuencias y sus imágenes asociadas
+const sequences = {
+  // Agregar más secuencias aquí si es necesario
+  // secuencia3: [ ... ]
+};
 
 // Respuestas aleatorias para mensajes desconocidos
 const randomResponses = [
@@ -125,23 +146,17 @@ async function handleIncomingMessage(message) {
       await sendSequenceMessages(message.from, sequences);
     }
   } else {
-    // Si no se encuentra una palabra clave, respondemos con la secuencia "gato"
-    const gatoResponse = keywordResponses.find(response => response.keywords.includes('gato'));
-    if (gatoResponse && gatoResponse.sequences) {
-      const sequences = gatoResponse.sequences;
-      await sendSequenceMessages(message.from, sequences);
-    } else {
-      const randomResponse = getRandomResponse(randomResponses);
-      await client.sendMessage(message.from, randomResponse);
-    }
+    const randomResponse = getRandomResponse(randomResponses);
+    await client.sendMessage(message.from, randomResponse);
   }
 }
+
 
 // Manejar eventos de mensajes
 client.on('message', handleIncomingMessage);
 
 // Función para inicializar el cliente y navegar a WhatsApp Web con opciones de espera
 (async () => {
-  const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
-  client.initialize(browser);
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+    client.initialize(browser);
 })();
