@@ -59,16 +59,16 @@ const keywordResponses = [
     keywords: ['gato', 'segunda secuencia'],
     sequences: [
       [
-        ['Mensaje 1 - Secuencia 2 (Opción 1)', 2000],
+        ['Mensaje 1 - Secuencia 2 (Opción 1)', 10000],
         ['enviar imagen imagen3.jpg', 500],
-        ['Mensaje 2 - Secuencia 2 (Opción 1)', 1000],
-        ['enviar imagen imagen4.jpg', 3000],
+        ['Mensaje 2 - Secuencia 2 (Opción 1)', 10000],
+        ['enviar imagen amor2.jpg', 30000],
       ],
       [
         ['Mensaje 1 - Secuencia 2 (Opción 2)', 2000],
         ['enviar imagen imagen5.jpg', 1000],
         ['Mensaje 2 - Secuencia 2 (Opción 2)', 3000],
-        ['enviar imagen imagen6.jpg', 500],
+        ['enviar imagen amor1.jpg', 500],
         ['Mensaje 3 - Secuencia 2 (Opción 2)', 2000],
       ],
     ],
@@ -113,7 +113,7 @@ async function handleIncomingMessage(message) {
 
 // Función para enviar un mensaje con una demora aleatoria antes de enviarlo
 async function sendDelayedMessage(chatId, message) {
-  const delay = Math.floor(Math.random() * 10000) + 4000; // Delay entre 1 y 5 segundos
+  const delay = Math.floor(Math.random() * 20000) + 10000; // Delay entre 1 y 5 segundos
   await new Promise(resolve => setTimeout(resolve, delay));
   await client.sendMessage(chatId, message);
 }
