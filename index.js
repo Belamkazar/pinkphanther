@@ -22,7 +22,6 @@ const removeAccents = (str) => {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 };
 
-
 // Palabras clave con respuestas aleatorias y secuencias de mensajes
 const keywordResponses = [
   {
@@ -89,10 +88,16 @@ const randomResponses = [
   'No estoy seguro de cómo responder a eso.',
 ];
 
-// Función para obtener una respuesta aleatoria de una lista
-function getRandomResponse(responsesList) {
-  const randomIndex = Math.floor(Math.random() * responsesList.length);
-  return responsesList[randomIndex];
+// Función para obtener una respuesta aleatoria de una lista con una demora
+function getRandomResponseWithDelay(responsesList) {
+  return new Promise((resolve) => {
+    const randomIndex = Math.floor(Math.random() * responsesList.length);
+    const randomResponse = responsesList[randomIndex];
+    const delay = Math.floor(Math.random() * 10000) + 5000; // Tiempo de espera entre 1 y 5 segundos
+    setTimeout(() => {
+      resolve(randomResponse);
+    }, delay);
+  });
 }
 
 // Función para verificar si el mensaje incluye alguna de las palabras clave asociadas con una secuencia
@@ -146,17 +151,16 @@ async function handleIncomingMessage(message) {
       await sendSequenceMessages(message.from, sequences);
     }
   } else {
-    const randomResponse = getRandomResponse(randomResponses);
+    const randomResponse = await getRandomResponseWithDelay(randomResponses);
     await client.sendMessage(message.from, randomResponse);
   }
 }
-
 
 // Manejar eventos de mensajes
 client.on('message', handleIncomingMessage);
 
 // Función para inicializar el cliente y navegar a WhatsApp Web con opciones de espera
 (async () => {
-    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
-    client.initialize(browser);
+  const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+  client.initialize(browser);
 })();
