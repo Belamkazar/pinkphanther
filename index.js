@@ -26,7 +26,7 @@ const removeAccents = (str) => {
 const keywordResponses = [
   {
     keywords: ["hola", "hl", "noches", "buenas", "saludos", "dias", "tarde", "mañana", "hla", "ola"],
-    responses: ['Hola amor', 'Hola papi', 'Hola como ests','Hola',],
+    responses: ['Hola amor', 'Hola papi', 'Hola como ests','Hola','Hola Rey','Como estás mi vida','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey'],
   },
   {
     keywords: ["como", "estas", "como estas", "esta", "tal", "estás", "está"],
@@ -41,8 +41,12 @@ const keywordResponses = [
     responses: ['Soy mamá de 2 niñas, tengo varios años separada del papá de mis hijas y solo me he dedicado a ellas el 100 %'],
   },
   {
-    keywords: ["reina", "atractiva", "guapa", "belleza", "amor", "bb", "hermosa", "preciosa", "bella", "linda"],
-    responses: ['Gracias muy alagador', 'Enserio', 'Q bien amor', 'De verdad q eres super lindo',  'Tu eres tan lindo de verdad', 'tu me gustas mucho', 'Gracias amor gracias 💞', 'Gracias mí corazón', 'Y eso q no me conoces','Es usted muy amable.'],
+    keywords: ["reina", "atractiva", "guapa", "belleza", "amor", "bb", "hermosa", "preciosa", "te amo", "amo", "adoro", "te quiero", "belleza", "bellezima", "belleza","encantadora", "fascinante", "atractiva", "hermosa", "maravillosa", "carismática", "espléndida", "elegante", "agradable", "deslumbrante", "deslumbradora", "encantadoramente", "atractivamente", "fascinantemente", "guapa", "encanto", "adorable", "adoracion", "cariñosa", "amorosa"],
+    responses: ['Gracias amor', 'Enserio', 'Eso siii todo natural amor', 'De verdad q eres super lindo',  'Tu eres tan lindo de verdad', 'tu me gustas mucho', 'Gracias amor 💞', 'Gracias mí corazón', 'Y eso q no me conoces','Es usted muy amable.', 'Gracias rey', 'Gracias por ser tan bello', 'Gracias mí amor', 'Gracias bb', 'Usted también es hermoso mi amor', 'Ya bello 🤩', 'Gracias 🥴', 'Bello mi amor', 'Hay BB eres la mejor persona 💗', 'Tú eres perfecto', 'Todo hermoso mi BB ❣️', 'Bello 🤩 meeeee encantaaaaaas', '❤️ tan bello', 'Gracias rey', 'Gracias cielo ❤️', 'Hay amor que lindo 😻', 'Gracias mi vida', 'Tan lindo me agradas mucho', 'Hay cielo que lindo', 'Besos mi amor', 'Hay amor tan lindo 😍', 'Te mando un beso y un abrazo fuerte', 'Tan bello mi amor', 'Gracias me encabtas amor', 'Es usted un amor', 'Te amo más mi bb', 'Yo a usted lo quiero mucho mucho', 'Siii Loo seee mi rey', 'Bueno mi vida pueden existir muchas más hermosas', 'Y gracias mi  amor 😍😍❤️💘', 'Y gracias', 'Te amooooo como loca', 'Aww te amo 😍😍', 'Te amo', 'Si de algo puedes estar seguro es q yo te amo más', 'Tii amo💘', '❤️💘 yo lo amo más', 'Yo también te quiero 😘', 'Te quiero 💖'],
+  },
+  {
+    keywords: ["edad", "años"],
+    responses: ['Tengo 47 años'],
   },
   {
     keywords: ["edad", "años"],
@@ -51,7 +55,8 @@ const keywordResponses = [
 
     {
       keywords: ["mamar","cuca", "culo", "cojerte", "tetas" , "excita", "duro", "paro", "vagina", "grandemasturbarme", "chupartela", "chuparsela", "panocha", "mamarcela", "anal", "penetrarte", "comerte", "verga", "pechospene", "culito", "meterselo", "oral", "guevo", "chupar", "sexo", "venirme", "paja", "cenosmamar", "cuca", "culo", "cojerte", "tetas" , "excita", "duro", "paro", "vagina", "grandemasturbarme", "chupartela", "chuparsela", "panocha", "mamarcela", "anal", "penetrarte", "comerte", "verga", "pechospene", "culito","meterselo", "oral", "guevo", "chupar", "sexo", "venirme", "paja", "cenosmamar", "cuca", "culo", "cojerte", "tetas ", "excita", "duro", "paro", "vagina", "grandemasturbarme", "chupartela", "chuparsela", "panocha", "mamarcela", "anal", "penetrarte", "comerte", "verga", "pechospene", "culito", "meterselo", "oral", "guevo", "chupar", "sexo", "venirme", "paja","cenos"],
-      responses: ['Así me encanta el huevo rico 🤤 Ami me gusta mucho', 'Ay No Se Que Decir🤭','Q Rico Eso Me Encanta','Ay No Se Que Decir🤭','Super rico❤️❤️','divino papasito','Uf, qué rico. Me encantaría. 😋😋😋😋','Ayyy Q RiKo sii','Qué delicia 😘😘❤😍😍😍','Dime que me harías', 'Para lo q más importante son los sentimientos reales de esa persona'],
+      responses: ['Así me encanta el huevo rico 🤤 Ami me gusta mucho', 'Ay No Se Que Decir🤭','Q Rico Eso Me Encanta','Ay No Se Que Decir🤭','Super rico❤️❤️','divino papasito','Uf, qué rico. Me encantaría. 😋😋😋😋','Ayyy Q RiKo sii','Qué delicia 😘😘❤😍😍😍','Dime que me harías', 'Q rico seriaa amor 😍😍❤️🤤😈','Huuuuy q ricoo Mii bb','mee encantaa q ricooo mi amor','😋😋😋q riicooo me encantaaaaaa','yaaa quiroo sentirlooo','Aaaaahh uufhssss q ricoooo','Riiicooo 😋😋👅','Ricooo riicoo ricoooo
+','Uufhsss dioossssss q ricoooooo 😍😍😍😍😍😈😈😈','q me deje las piernas temblando sexo rudo contigo amor seria perfectoo','Huy q riiicooo uffhsss','Quierooo esooo paraaa mi, sentirloo dentro de miii😍😍😍😍','Q ricooo sería super😈😋😋😋','Mee encantaria sentirlo dentro d mii 😈😋😋','😋😋😋 seriaaaa ricooo', 'yoo quierooo 😈😈','sii Bebé y me mandas videos yoo quiero ver 😋😋😋😈😍😍','Waooo q ricoooo bb','Q ricooo bb meee encantaaas','huy q ricoo bb','Uf q ricooooooo mee encantaria tu penee😋😋😋😋','😋😋😋 ufsss ricoooo','huy q ricoo','😮😮😋😋😋😈q riiicoooo mee encantaaa'],
     },
 
 {
@@ -134,7 +139,42 @@ const randomResponses = [
   '😍',
   '🤗🤗',
   'Si amor',
-];
+  'Shiiii 🥰❤️',
+  'Ok amor',
+  '❤️super rico 🤤',
+  'Hay dios 😁',
+  'Que bueno saber eso 😊',
+  'Vale está bien',
+  'Woow',
+  'Vale',
+  'Que finooo',
+  'Ahhh yaa que chevere',
+  'Sip',
+  'Si claro',
+  '❤️super rico 🤤',
+  'Ya entiendo',
+  'Ok me parece bien',
+  'Unnm eso es bueno',
+  'Muy bien',
+  'Si Rey',
+  'Está muy bien',
+  'Eso es bueno',
+  'Si ya',
+  'Bueno Amor❤️',
+  'Lindo',
+  'Eres mío Amor',
+  'Un ya',
+  'Me alegro',
+  'Si aja',
+  'Un ya cielo',
+  'Vale cielo está bien',
+  'Vale mí amor ❤️😍',
+  'Está bien ☺️',
+  'Vale amor está Bien que haces horita',
+  'Si que bueno',
+  'Ok mi amor',
+  'Que bueno mi amor',
+  ];
 
 // Función para obtener una respuesta aleatoria de una lista
 function getRandomResponse(responsesList) {
@@ -199,7 +239,7 @@ async function handleIncomingMessage(message) {
 
 // Función para enviar un mensaje con una demora aleatoria antes de enviarlo
 async function sendDelayedMessage(chatId, message) {
-  const delay = Math.floor(Math.random() * 10000) + 5000; // Delay entre 1 y 5 segundos
+  const delay = Math.floor(Math.random() * 8000) + 4000; // Delay entre 1 y 5 segundos
   await new Promise(resolve => setTimeout(resolve, delay));
   await client.sendMessage(chatId, message);
 }
