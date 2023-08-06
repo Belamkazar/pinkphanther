@@ -54,105 +54,7 @@ const keywordResponses = [
          keywords: ["suck", "cunt", "ass", "fuck", "tits", "excites", "hard", "I stop", "vagina", "big masturbate", "suck it", "suck it" , "panocha", "mamarcela", "anal", "penetrarte", "eat", "dick", "pechospene", "culito", "put it in", "oral", "cock", "suck", " sex", "come", "handjob", "cenosmamar", "cuca", "ass", "cojerte", "tits", "excites", "hard", "stop", "vagina", "big masturbate" , "suck it", "suck it", "panocha", "mamarcela", "anal", "penetrarte", "comerte", "verga", "pechospene", "culito","puterelo", "oral", " cock", "suck", "sex", "come", "straw", "cenosmamar", "cuca", "ass", "cojerte", "tits", "excites", "hard", "I stop" , "vagina", "big masturbate", "suck it", "suck it", "panocha", "mamarcela", "anal", "penetrarte", "comerte", "verga", "pechospene", "culito", " put it in", "oral", "cock", "suck", "sex", "come", "straw off", "cenos"],
          responses: ['Thats how I love rich egg 🤤 I like it a lot', 'Oh I Dont Know What To Say🤭', 'I Love That Rich', 'Oh I Dont Know What To Say🤭', 'Super yummy❤️❤️', 'divine papasito', 'Ugh, how delicious. Id love to. 😋😋😋😋', 'Ayyy Q RiKo yes', 'What a delight 😘😘❤😍😍😍', 'Tell me what you would do to me', 'How rich it would be love 😍😍❤️🤤😈', 'Huuuuy what a rich Mii bb' , 'I love how delicious my love', '😋😋😋 how delicious I love it', 'yaaa I want to feel it', 'Aaaaahh uufhssss how delicious', 'Riiicooo 😋😋👅', 'Ricooo riicooo ricooo', 'Uufhss dioosss sss what ricooooooo 😍😍😍😍😍😈😈😈', 'that leaves my legs shaking rough sex with you love would be perfect', 'Wow that riiiicooo uffhsss', 'I want that for me, feel it inside me 😍😍😍😍', ' How yummy it would be super😈😋😋😋', 'I would love to feel it inside of me 😈😋😋', '😋😋😋 it would be yummy', 'I want to 😈😈', 'yeah Baby and send me videos I want to see 😋😋😋 😈😍😍', 'Waooo yummy bb', 'Yummy bb I love it', 'huy yummy bb', 'Ugh yummy I would love your penis😋😋😋😋', '😋😋😋 ufsss yummy', ' huy yummy', '😮😮😋😋😋😈 yummy I love it'],
        },
-  {
-    keywords: ["hola", "hl", "noches", "buenas", "saludos", "dias", "tarde", "mañana", "hla", "ola"],
-    responses: ['Hola amor', 'Hola papi', 'Hola como ests','Hola','Hola Rey','Como estás mi vida','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey'],
-  },
-  {
-    keywords: ["como", "estas", "como estas", "esta", "tal", "estás", "está"],
-    responses: ['Estoy, bien gracias', 'Bastante bien.', 'Muy bien Gracias', 'Bien, gracias.', 'Estoy de maravilla, amor❤️.'],
-  },
-  {
-    keywords: ["donde", "parte", "vives", "ciudad", "lugar", "pais", "dnde", "dónde", "país", "sitio"],
-    responses: ['Soy Venezolana y estoy aquí en Bogota en la 127 con avenida villas en frente de bulevar niza amor'],
-  },
-  {
-    keywords: ["soltera", "comprometida", "casada", "marido", "novio", "esposo", "pareja"],
-    responses: ['Soy mamá de 2 niñas, tengo varios años separada del papá de mis hijas y solo me he dedicado a ellas el 100 %'],
-  },
-  {
-    keywords: ["reina", "atractiva", "guapa", "belleza", "amor", "bb", "hermosa", "preciosa", "te amo", "amo", "adoro", "te quiero", "belleza", "bellezima", "belleza","encantadora", "fascinante", "atractiva", "hermosa", "maravillosa", "carismática", "espléndida", "elegante", "agradable", "deslumbrante", "deslumbradora", "encantadoramente", "atractivamente", "fascinantemente", "guapa", "encanto", "adorable", "adoracion", "cariñosa", "amorosa"],
-    responses: ['Gracias amor', 'Enserio', 'Eso siii todo natural amor', 'De verdad q eres super lindo',  'Tu eres tan lindo de verdad', 'tu me gustas mucho', 'Gracias amor 💞', 'Gracias mí corazón', 'Y eso q no me conoces','Es usted muy amable.', 'Gracias rey', 'Gracias por ser tan bello', 'Gracias mí amor', 'Gracias bb', 'Usted también es hermoso mi amor', 'Ya bello 🤩', 'Gracias 🥴', 'Bello mi amor', 'Hay BB eres la mejor persona 💗', 'Tú eres perfecto', 'Todo hermoso mi BB ❣️', 'Bello 🤩 meeeee encantaaaaaas', '❤️ tan bello', 'Gracias rey', 'Gracias cielo ❤️', 'Hay amor que lindo 😻', 'Gracias mi vida', 'Tan lindo me agradas mucho', 'Hay cielo que lindo', 'Besos mi amor', 'Hay amor tan lindo 😍', 'Te mando un beso y un abrazo fuerte', 'Tan bello mi amor', 'Gracias me encabtas amor', 'Es usted un amor', 'Te amo más mi bb', 'Yo a usted lo quiero mucho mucho', 'Siii Loo seee mi rey', 'Bueno mi vida pueden existir muchas más hermosas', 'Y gracias mi  amor 😍😍❤️💘', 'Y gracias', 'Te amooooo como loca', 'Aww te amo 😍😍', 'Te amo', 'Si de algo puedes estar seguro es q yo te amo más', 'Tii amo💘', '❤️💘 yo lo amo más', 'Yo también te quiero 😘', 'Te quiero 💖'],
-  },
-  {
-    keywords: ["edad", "años"],
-    responses: ['Tengo 47 años'],
-  },
-  {
-    keywords: ["edad", "años"],
-    responses: ['Tengo 47 años'],
-  },
 
-    {
-      keywords: ["mamar", "cuca", "culo", "cojerte", "tetas" , "excita", "duro", "paro", "vagina", "grandemasturbarme", "chupartela", "chuparsela", "panocha", "mamarcela", "anal", "penetrarte", "comerte", "verga", "pechospene", "culito", "meterselo", "oral", "guevo", "chupar", "sexo", "venirme", "paja", "cenosmamar", "cuca", "culo", "cojerte", "tetas" , "excita", "duro", "paro", "vagina", "grandemasturbarme", "chupartela", "chuparsela", "panocha", "mamarcela", "anal", "penetrarte", "comerte", "verga", "pechospene", "culito","meterselo", "oral", "guevo", "chupar", "sexo", "venirme", "paja", "cenosmamar", "cuca", "culo", "cojerte", "tetas ", "excita", "duro", "paro", "vagina", "grandemasturbarme", "chupartela", "chuparsela", "panocha", "mamarcela", "anal", "penetrarte", "comerte", "verga", "pechospene", "culito", "meterselo", "oral", "guevo", "chupar", "sexo", "venirme", "paja","cenos"],
-      responses: ['Así me encanta el huevo rico 🤤 Ami me gusta mucho', 'Ay No Se Que Decir🤭', 'Q Rico Eso Me Encanta', 'Ay No Se Que Decir🤭', 'Super rico❤️❤️', 'divino papasito', 'Uf, qué rico. Me encantaría. 😋😋😋😋', 'Ayyy Q RiKo sii', 'Qué delicia 😘😘❤😍😍😍', 'Dime que me harías', 'Q rico seriaa amor 😍😍❤️🤤😈', 'Huuuuy q ricoo Mii bb', 'mee encantaa q ricooo mi amor', '😋😋😋q riicooo me encantaaaaaa', 'yaaa quiroo sentirlooo', 'Aaaaahh uufhssss q ricoooo', 'Riiicooo 😋😋👅', 'Ricooo riicoo ricoooo', 'Uufhsss dioossssss q ricoooooo 😍😍😍😍😍😈😈😈', 'q me deje las piernas temblando sexo rudo contigo amor seria perfectoo', 'Huy q riiicooo uffhsss', 'Quierooo esooo paraaa mi, sentirloo dentro de miii😍😍😍😍', 'Q ricooo sería super😈😋😋😋', 'Mee encantaria sentirlo dentro d mii 😈😋😋', '😋😋😋 seriaaaa ricooo', 'yoo quierooo 😈😈', 'sii Bebé y me mandas videos yoo quiero ver 😋😋😋😈😍😍', 'Waooo q ricoooo bb', 'Q ricooo bb meee encantaaas', 'huy q ricoo bb', 'Uf q ricooooooo mee encantaria tu penee😋😋😋😋', '😋😋😋 ufsss ricoooo', 'huy q ricoo', '😮😮😋😋😋😈q riiicoooo mee encantaaa'],
-    },
-
-{
-  keywords: ['rico', 'rica', 'provocativa', 'ricota', 'lechita', 'haces', 'desnuda', 'dedicas', 'que haces', 'deliciosa'],
-  sequences: [
-    [
-      ['Soy modelo webc@m de S€X0 en vivo por chat', 6000],
-      ['Si quieres verme, aquí te envió el Link', 6000],
-      ['no tienes que pagar nada amor', 6000],
-      ['Te envire fotos y vídeos y cuando este en vivo amor', 6000],
-      ['enviar imagen rica1.jpg', 6000],
-      ['enviar imagen rica2.jpg', 6000],
-      ['enviar imagen rica3.jpg', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-    ],
-    [
-      ['Soy modelo webc@m de S€X0 en vivo por chat, Te enviaré el enlace y no tienes que pagar nada, te enviare fotos y videos, podras verme cuando este en vivo Amor❤️🔥.', 6000],
-      ['enviar imagen rica1.jpg', 6000],
-      ['enviar imagen rica2.jpg', 6000],
-      ['enviar imagen rica3.jpg', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-    ],
-  ],
-},
-{
-  keywords: ['entra', 'sale', 'entro', 'paguina', 'abre', 'hago', 'link', 'bloquada', 'funciona', 'abrir'],
-  sequences: [
-    [
-      ['Quiero q lo intentes de nuevo para que me veas todas las noches Amor', 6000],
-      ['enviar imagen entra1.jpg', 6000],
-      ['enviar imagen entra2.jpg', 6000],
-      ['enviar imagen entra3.jpg', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-    ],
-    [
-      ['Intentalo de nuevo y disfrutamos todas las noches Amor🔥.', 6000],
-      ['enviar imagen entra1.jpg', 6000],
-      ['enviar imagen entra4.jpg', 6000],
-      ['enviar imagen entra5.jpg', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-      ['https://nahomicam.belamkazar.com/', 6000],
-    ],
-  ],
-},
-// Agregar más palabras clave y sus respuestas/secuencias asociadas aquí
-{
-  keywords: ['foto', 'video', 'videos', 'mandame', 'enviame', 'hago', 'llamada', 'audio'],
-  sequences: [
-    [
-      ['Sii Amor', 6000],
-      ['enviar imagen amor1.jpg', 6000],
-      ['enviar imagen amor2.jpg', 6000],
-      ['enviar imagen amor3.jpg', 6000],
-    ],
-    [
-      ['Bien Amor🔥.', 6000],
-      ['enviar imagen amor2.jpg', 6000],
-      ['enviar imagen amor4.jpg', 6000],
-      ['enviar imagen amor5.jpg', 6000],
-    ],
-  ],
-},
 {
   keywords: ['rich', 'rich', 'provocative', 'ricotta', 'milk', 'you do', 'naked', 'dedicate', 'what do you do', 'delicious'],
   sequences: [
@@ -235,6 +137,29 @@ const randomResponses = [
   'Yes love',
   'Shiiii 🥰❤️',
   'Ok love',
+  '❤️super rich 🤤',
+  'Good to know that 😊',
+  'Ok thats good',
+  'Woow',
+  'Okay',
+  'Yep',
+  'Yeah sure',
+  'I get it',
+  'Ok sounds good to me',
+  'Unnm thats good',
+  'Very good',
+  'Yes King',
+  'Thats very good',
+  'Thats good',
+  'Yeah',
+  'Good Amor❤️',
+  'Cute',
+  'Youre mine Amor',
+  'Im glad',
+  'Un ya honey',
+  'Okay honey its okay',
+  'Okay my love ❤️😍',
+  'Okay ☺️',
   ];
 
 // Función para obtener una respuesta aleatoria de una lista
