@@ -47,7 +47,7 @@ const keywordResponses = [
   {
     "keywords": ["age", "years"],
     "responses": ["I'm 47 years old"],
-  }
+  },
 
 
   {
