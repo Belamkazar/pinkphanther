@@ -24,6 +24,36 @@ const removeAccents = (str) => {
 
 // Palabras clave con respuestas aleatorias y secuencias de mensajes
 const keywordResponses = [
+    {
+    "keywords": ["hello", "hl", "nights", "good", "greetings", "days", "afternoon", "morning", "hla", "ola"],
+    "responses": ["Hello love", "Hello daddy", "Hello, how are you", "Hello", "Hello King", "How are you my life", "Hello King", "Hello King", "Hello King", "Hello King", "Hello King", "Hello King", "Hello King", "Hello King", "Hello King", "Hello King", "Hello King", "Hello King", "Hello King", "Hello King", "Hello King", "Hello King"],
+  },
+  {
+    "keywords": ["how", "are you", "how are you", "this", "how", "is"],
+    "responses": ["I'm fine, thank you", "Quite well.", "Very well, thank you", "Fine, thank you.", "I'm doing great, my love ❤️."],
+  },
+  {
+    "keywords": ["where", "part", "live", "city", "place", "country", "where", "where", "country", "site"],
+    "responses": ["I'm Venezuelan and I'm here in Bogotá, on 127th Street with Villas Avenue, in front of Niza Boulevard, my love"],
+  },
+  {
+    "keywords": ["single", "engaged", "married", "husband", "boyfriend", "husband", "partner"],
+    "responses": ["I'm a mother of 2 girls, I've been separated from my daughters' father for several years and I've dedicated myself to them 100%"],
+  },
+  {
+    "keywords": ["queen", "attractive", "beautiful", "beauty", "love", "bb", "beautiful", "precious", "I love you", "I love", "adore", "I want you", "beauty", "beauty", "beauty", "charming", "fascinating", "attractive", "beautiful", "wonderful", "charismatic", "splendid", "elegant", "pleasant", "dazzling", "dazzling", "charmingly", "attractively", "fascinatingly", "pretty", "charm", "adorable", "adoration", "affectionate", "loving"],
+    "responses": ["Thank you my love", "Really", "Yes, all natural, my love", "You're really handsome", "You're so handsome, really", "I really like you a lot", "Thank you, my love 💞", "Thank you my dear", "And that's even though you don't know me", "You're very kind.", "Thank you, king", "Thank you for being so beautiful", "Thank you, my love", "Thank you, baby", "You're also beautiful, my love", "Already handsome 🤩", "Thanks 🥴", "Beautiful, my love", "Oh, baby, you're the best person 💗", "You're perfect", "Everything's beautiful, my baby ❣️", "Beautiful 🤩, I love you", "❤️ so beautiful", "Thank you, king", "Thank you, sweetheart ❤️", "Oh, love, how beautiful 😻", "Thank you, my life", "So lovely, I really like you", "Oh, sweetheart, how beautiful", "Kisses, my love", "Oh, love, so lovely 😍", "I send you a big kiss and a hug", "So beautiful, my love", "Thank you, I adore you, my love", "You're very lovely", "I love you more, my baby", "I really, really care about you a lot", "Yes, I know, my king", "Well, my life, there can be many more beautiful ones", "And thank you, my love 😍😍❤️💘", "And thank you", "I love you", "If there's one thing you can be sure of, it's that I love you more", "I love you💘", "❤️💘 I love him more", "I also love you 😘", "I love you 💖"],
+  },
+  {
+    "keywords": ["age", "years"],
+    "responses": ["I'm 47 years old"],
+  }
+
+
+  {
+         keywords: ["suck", "cunt", "ass", "fuck", "tits", "excites", "hard", "I stop", "vagina", "big masturbate", "suck it", "suck it" , "panocha", "mamarcela", "anal", "penetrarte", "eat", "dick", "pechospene", "culito", "put it in", "oral", "cock", "suck", " sex", "come", "handjob", "cenosmamar", "cuca", "ass", "cojerte", "tits", "excites", "hard", "stop", "vagina", "big masturbate" , "suck it", "suck it", "panocha", "mamarcela", "anal", "penetrarte", "comerte", "verga", "pechospene", "culito","puterelo", "oral", " cock", "suck", "sex", "come", "straw", "cenosmamar", "cuca", "ass", "cojerte", "tits", "excites", "hard", "I stop" , "vagina", "big masturbate", "suck it", "suck it", "panocha", "mamarcela", "anal", "penetrarte", "comerte", "verga", "pechospene", "culito", " put it in", "oral", "cock", "suck", "sex", "come", "straw off", "cenos"],
+         responses: ['Thats how I love rich egg 🤤 I like it a lot', 'Oh I Dont Know What To Say🤭', 'I Love That Rich', 'Oh I Dont Know What To Say🤭', 'Super yummy❤️❤️', 'divine papasito', 'Ugh, how delicious. Id love to. 😋😋😋😋', 'Ayyy Q RiKo yes', 'What a delight 😘😘❤😍😍😍', 'Tell me what you would do to me', 'How rich it would be love 😍😍❤️🤤😈', 'Huuuuy what a rich Mii bb' , 'I love how delicious my love', '😋😋😋 how delicious I love it', 'yaaa I want to feel it', 'Aaaaahh uufhssss how delicious', 'Riiicooo 😋😋👅', 'Ricooo riicooo ricooo', 'Uufhss dioosss sss what ricooooooo 😍😍😍😍😍😈😈😈', 'that leaves my legs shaking rough sex with you love would be perfect', 'Wow that riiiicooo uffhsss', 'I want that for me, feel it inside me 😍😍😍😍', ' How yummy it would be super😈😋😋😋', 'I would love to feel it inside of me 😈😋😋', '😋😋😋 it would be yummy', 'I want to 😈😈', 'yeah Baby and send me videos I want to see 😋😋😋 😈😍😍', 'Waooo yummy bb', 'Yummy bb I love it', 'huy yummy bb', 'Ugh yummy I would love your penis😋😋😋😋', '😋😋😋 ufsss yummy', ' huy yummy', '😮😮😋😋😋😈 yummy I love it'],
+       },
   {
     keywords: ["hola", "hl", "noches", "buenas", "saludos", "dias", "tarde", "mañana", "hla", "ola"],
     responses: ['Hola amor', 'Hola papi', 'Hola como ests','Hola','Hola Rey','Como estás mi vida','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey','Hola Rey'],
@@ -123,6 +153,71 @@ const keywordResponses = [
     ],
   ],
 },
+{
+  keywords: ['rich', 'rich', 'provocative', 'ricotta', 'milk', 'you do', 'naked', 'dedicate', 'what do you do', 'delicious'],
+  sequences: [
+    [
+      ['Love send me what your heart tells you to my PayPal belamkazar@gmail.com and we will do everything you want love', 6000],
+      ['Love you can video call me whenever you want, I will do everything you tell me, I will send you photos and videos as you want them love💋🔥. ', 6000],
+      ['I will be yours love', 6000],
+      ['enviar imagen rica1.jpg', 6000],
+      ['enviar imagen rica2.jpg', 6000],
+      ['enviar imagen rica3.jpg', 6000],
+      ['https://www.paypal.com/paypalme/belamkazar?country.x=CO&locale.x=es_XC&fbclid=IwAR1yx4h2yHdlZ4GgFQx9K6qg7bjlGp4Bgcv5C3tS5BGez6OmzFp7gJZOtyo', 6000],
+      ['https://www.paypal.com/paypalme/belamkazar?country.x=CO&locale.x=es_XC&fbclid=IwAR1yx4h2yHdlZ4GgFQx9K6qg7bjlGp4Bgcv5C3tS5BGez6OmzFp7gJZOtyo', 6000],
+      ['https://www.paypal.com/paypalme/belamkazar?country.x=CO&locale.x=es_XC&fbclid=IwAR1yx4h2yHdlZ4GgFQx9K6qg7bjlGp4Bgcv5C3tS5BGez6OmzFp7gJZOtyo', 6000],
+    ],
+    [
+      ['Love send me what you want to my paypal belamkazar@gmail.com and I will be all yours love I will make you the videos you want and you can video call me when you want to ask me what you want I will please you in what you want love I will do everything to be your woman love', 6000],
+      ['enviar imagen rica1.jpg', 6000],
+      ['enviar imagen rica2.jpg', 6000],
+      ['enviar imagen rica3.jpg', 6000],
+      ['https://www.paypal.com/paypalme/belamkazar?country.x=CO&locale.x=es_XC&fbclid=IwAR1yx4h2yHdlZ4GgFQx9K6qg7bjlGp4Bgcv5C3tS5BGez6OmzFp7gJZOtyo', 6000],
+      ['https://www.paypal.com/paypalme/belamkazar?country.x=CO&locale.x=es_XC&fbclid=IwAR1yx4h2yHdlZ4GgFQx9K6qg7bjlGp4Bgcv5C3tS5BGez6OmzFp7gJZOtyo', 6000],
+      ['https://www.paypal.com/paypalme/belamkazar?country.x=CO&locale.x=es_XC&fbclid=IwAR1yx4h2yHdlZ4GgFQx9K6qg7bjlGp4Bgcv5C3tS5BGez6OmzFp7gJZOtyo', 6000],
+    ],
+  ],
+},
+{
+  keywords: ['enter', 'exit', 'enter', 'page', 'open', 'do', 'link', 'blocked', 'works', 'open', 'paypal', 'money', 'cash'],
+  sequences: [
+    [
+      ['Love send me to my paypal belamkazar@gmail.com and enjoy rich I can please you with video calls and you can ask me whatever you want I will be everything to please you love', 6000],
+      ['I will be available at any time to please you love🔥.', 6000],
+      ['enviar imagen entra1.jpg', 6000],
+      ['enviar imagen entra2.jpg', 6000],
+      ['enviar imagen entra3.jpg', 6000],
+      ['https://www.paypal.com/paypalme/belamkazar?country.x=CO&locale.x=es_XC&fbclid=IwAR1yx4h2yHdlZ4GgFQx9K6qg7bjlGp4Bgcv5C3tS5BGez6OmzFp7gJZOtyo', 6000],
+      ['https://www.paypal.com/paypalme/belamkazar?country.x=CO&locale.x=es_XC&fbclid=IwAR1yx4h2yHdlZ4GgFQx9K6qg7bjlGp4Bgcv5C3tS5BGez6OmzFp7gJZOtyo', 6000],
+    ],
+    [
+      ['Send me to my paypal I will be your woman I will do everything you tell me to be your woman love that way you show me that you really love me love🤤.', 6000],
+      ['enviar imagen entra1.jpg', 6000],
+      ['enviar imagen entra4.jpg', 6000],
+      ['enviar imagen entra5.jpg', 6000],
+      ['https://www.paypal.com/paypalme/belamkazar?country.x=CO&locale.x=es_XC&fbclid=IwAR1yx4h2yHdlZ4GgFQx9K6qg7bjlGp4Bgcv5C3tS5BGez6OmzFp7gJZOtyo', 6000],
+      ['https://www.paypal.com/paypalme/belamkazar?country.x=CO&locale.x=es_XC&fbclid=IwAR1yx4h2yHdlZ4GgFQx9K6qg7bjlGp4Bgcv5C3tS5BGez6OmzFp7gJZOtyo', 6000],
+    ],
+  ],
+},
+// Agregar más palabras clave y sus respuestas/secuencias asociadas aquí
+{
+  keywords: ['photo', 'video', 'videos', 'send me', 'send me', 'do', 'call', 'audio'],
+  sequences: [
+    [
+      ['Yes Love', 6000],
+      ['enviar imagen amor1.jpg', 6000],
+      ['enviar imagen amor2.jpg', 6000],
+      ['enviar imagen amor3.jpg', 6000],
+    ],
+    [
+      ['Well Love🔥.', 6000],
+      ['enviar imagen amor2.jpg', 6000],
+      ['enviar imagen amor4.jpg', 6000],
+      ['enviar imagen amor5.jpg', 6000],
+    ],
+  ],
+},
 ];
 
 // Diccionario de secuencias y sus imágenes asociadas
@@ -133,46 +228,13 @@ const sequences = {
 
 // Respuestas aleatorias para mensajes desconocidos
 const randomResponses = [
-  '❤️',
+    '❤️',
   '🤗🤗',
   '😍',
   '🤗🤗',
-  'Si amor',
+  'Yes love',
   'Shiiii 🥰❤️',
-  'Ok amor',
-  '❤️super rico 🤤',
-  'Hay dios 😁',
-  'Que bueno saber eso 😊',
-  'Vale está bien',
-  'Woow',
-  'Vale',
-  'Que finooo',
-  'Ahhh yaa que chevere',
-  'Sip',
-  'Si claro',
-  '❤️super rico 🤤',
-  'Ya entiendo',
-  'Ok me parece bien',
-  'Unnm eso es bueno',
-  'Muy bien',
-  'Si Rey',
-  'Está muy bien',
-  'Eso es bueno',
-  'Si ya',
-  'Bueno Amor❤️',
-  'Lindo',
-  'Eres mío Amor',
-  'Un ya',
-  'Me alegro',
-  'Si aja',
-  'Un ya cielo',
-  'Vale cielo está bien',
-  'Vale mí amor ❤️😍',
-  'Está bien ☺️',
-  'Vale amor está Bien que haces horita',
-  'Si que bueno',
-  'Ok mi amor',
-  'Que bueno mi amor',
+  'Ok love',
   ];
 
 // Función para obtener una respuesta aleatoria de una lista
